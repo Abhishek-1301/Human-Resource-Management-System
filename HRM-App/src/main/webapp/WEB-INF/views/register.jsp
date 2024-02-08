@@ -6,11 +6,11 @@
         <title>
             Register
         </title>
-        <link rel="stylesheet" type="text/css" href="css/register.css">
+        <link rel="stylesheet" type="text/css" href="css/registerstyle.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     </head>
     <body style="background-color:skyblue">
-        <div class="logindiv container">
+        <div class="ld">
             <div class="login-form">
             <h2>Register</h2>
             <div class="row">

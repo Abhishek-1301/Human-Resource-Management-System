@@ -8,7 +8,7 @@
     border-radius: 5px;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
 }
-.logindiv{
+.ld{
     display:flex;
     align-items:center ;
     justify-content: center;
@@ -33,18 +33,17 @@ input[type="text"], input[type="password"] {
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 50px;
     box-sizing: border-box;
 }
-
 input[type="submit"] {
     width: 400%;
     padding: 10px;
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    border-radius: 50px;
     padding-top: 5px;
 }
 

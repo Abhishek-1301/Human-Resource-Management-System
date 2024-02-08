@@ -29,23 +29,22 @@ input[type="text"], input[type="password"] {
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 50px;
     box-sizing: border-box;
 }
-
 input[type="submit"] {
     width: 400%;
     padding: 10px;
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    border-radius: 50px;
     padding-top: 5px;
 }
-
 input[type="submit"]:hover {
     background-color: #45a049;
+
 }
 p{
     padding-left: 30px;
