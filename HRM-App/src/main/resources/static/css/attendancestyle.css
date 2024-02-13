@@ -1,0 +1,119 @@
+body{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas:
+    "side header"
+    "side main";
+}
+
+.header{
+    grid-area: header;
+}
+
+.sidebar{
+    background-color: #e9f0f2;
+    grid-area: side;
+    display: grid;
+    grid-template-rows: 100px 500px;
+    grid-template-areas:
+    "r1"
+    "r2"
+    "r3"
+    "r4";
+}
+.card2{
+    align-items: center;
+    justify-content: center;
+}
+.main{
+    grid-area: main;
+    background-image: url('images/pattern.jpeg');
+}
+a{
+    color: #000 !important;
+    text-decoration: none !important;
+    background-color: none !important;
+}
+h2{
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #51aec3;
+    border-radius: 5px;
+    padding: 5px;
+    width: 50%;
+    box-sizing: border-box;
+}
+ul{
+    list-style-type: none;
+}
+li{
+    font-size: 15px;
+}
+img{
+    width:150px;
+    padding: 10px;
+    mix-blend-mode: color-burn;
+}
+form {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    box-sizing: border-box;
+    text-align: center;
+}
+label {
+    display: block;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+span{
+    color: red;
+}
+input[type="text"]{
+    width: 50%;
+	padding:5px;
+    margin-bottom: 20px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+}
+select{
+    width: 35%;
+	padding:5px;
+    margin-bottom: 10px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+}
+input[type="date"]{
+    width: 30%;
+	padding:5px;
+    margin-top: 20px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+}
+input[type="submit"]{
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 20px;
+	border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.attform{
+    padding: 150px;
+    position: relative;
+    left: 250px;
+}
+#att_type{
+    position: relative;
+    right: 25px;
+}

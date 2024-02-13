@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/dashboardstyle.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
-<body>
+<body background="images/bg.jpeg">
     <header class="header">
         <h2>Welcome to HRMS Dashboard</h2>
     </header>
@@ -20,18 +20,21 @@
         <div class="card2">
             <ul>
                 <br><br>
-                <a href="/attendance"><li>Attendance</li><br></a>
-                <a href="/payrolls"><li>Pay Rolls</li><br></a>
-                <a href="/performance"><li>Performance</li><br></a>
-                <a href="employeeengagements"><li>Employee Engagements</li><br></a>
-                <a href="/recruitment"><li>Recruitment</li><br></a>
-                <a href="/selection"><li>Selection</li><br></a>
-                <a href="/trainingndevelopment"><li>Training & Development</li><br></a>
-                <a href="/feedback"><li>Feedback</li><br></a>
+                <a href="/dashboard"><li>Home</li><br></a>
+                <a href="/dashboard/attendance"><li>Attendance</li><br></a>
+                <a href="/dashboard/payrolls"><li>Pay Rolls</li><br></a>
+                <a href="/dashboard/performance"><li>Performance</li><br></a>
+                <a href="/dashboard/recruitment"><li>Recruitment</li><br></a>
+                <a href="/dashboard/selection"><li>Selection</li><br></a>
+                <a href="/dashboard/trainingndevelopment"><li>Training & Development</li><br></a>
+                <a href="/dashboard/feedback"><li>Feedback</li><br></a>
                 <a href="/"><li>Log out</li><br></a>
             </ul>
         </div>
     </section>
-    <main class="main"></main>
+    <main class="main">
+        <marquee direction="right" style="color:blue;">India's No.1 Leading Human Resource Management System
+        </marquee>
+    </main>
 </body>
 </html>

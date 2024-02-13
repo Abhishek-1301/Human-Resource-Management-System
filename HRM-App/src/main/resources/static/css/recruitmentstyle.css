@@ -1,0 +1,190 @@
+body{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas:
+    "side main"
+    "side main";
+}
+
+.sidebar{
+    background-color: #e9f0f2;
+    grid-area: side;
+    display: grid;
+    grid-template-rows: 100px 500px;
+    grid-template-areas:
+    "r1"
+    "r2"
+    "r3"
+    "r4";
+}
+.card2{
+    align-items: center;
+    justify-content: center;
+}
+.main{
+    grid-area: main;
+}
+a{
+    color: #000 !important;
+    text-decoration: none !important;
+    background-color: none !important;
+}
+h2{
+    padding: 30px;
+}
+ul{
+    list-style-type: none;
+}
+li{
+    font-size: 15px;
+}
+img{
+    width:150px;
+    padding: 10px;
+    mix-blend-mode: color-burn;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+  }
+
+  th, td {
+    border: 1px solid black;
+    padding: 15px;
+    text-align:center;
+  }
+
+  th {
+    background-color:skyblue;
+    color:black;
+    cursor: pointer;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2
+  }
+
+  @media screen and (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+    th, td {
+      /* Makes each cell behave like a block-level element, forcing it to stack vertically */
+      padding: 10px;
+      /* Adds some padding to the cells */
+      text-align: center;
+      /* Vertically centers text within the cell */
+    }
+  }
+  .section {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+
+  .section form {
+    margin-top: 20px;
+  }
+  form {
+    margin-top: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  select, input[type="date"], input[type="time"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+  form {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="email"], textarea {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="email"], textarea {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+#candidatesize
+{
+  width:1240px;
+  height:38px;
+}
+#interviewersize
+{
+  width:1240px;
+  height:38px;
+
+}
+span{
+    color:red;
+}
