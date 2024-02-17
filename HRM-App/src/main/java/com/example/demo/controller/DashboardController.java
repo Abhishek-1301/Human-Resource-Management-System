@@ -18,4 +18,24 @@ public class DashboardController {
     public String recruitment() {
         return "recruitment";
     }
+    @GetMapping("/dashboard/feedback")
+    public String feedback() {
+        return "feedback";
+    }
+    @GetMapping("/dashboard/payrolls")
+    public String payrolls() {
+        return "payrolls";
+    }
+    @GetMapping("/dashboard/performance")
+    public String performance() {
+        return "performance";
+    }
+    @GetMapping("/dashboard/trainingndevelopment")
+    public String trainndevelop() {
+        return "trainndevelop";
+    }
+    @GetMapping("/dashboard/selection")
+    public String selection() {
+        return "selection";
+    }
 }
