@@ -15,7 +15,7 @@
                 <h2>Login</h2>
                 <div class="row">
                     <div class="col-md-4">
-                        <form>
+                        <form action="/dashboard" method="get">
                             <label for="username"><b>Username<span>*</span>:</b></label>
                             <input class="form-control" type="text" id="username" name="username" required>
                             <label for="password"><b>Password<span>*</span>:</b></label>
