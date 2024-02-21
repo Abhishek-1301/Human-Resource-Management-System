@@ -6,19 +6,13 @@ import jakarta.persistence.*;
 @Table(name="credentials")
 public class Credentials {
     @Id
-    private String user_name;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String username;
     @Column(name = "pass")
     private String password;
     @Transient
     private String cpassword;
-
-    public String getUser_name() {
-        return user_name;
-    }
-
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
-    }
 
     public String getPassword() {
         return password;
@@ -34,5 +28,21 @@ public class Credentials {
 
     public void setCpassword(String cpassword) {
         this.cpassword = cpassword;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

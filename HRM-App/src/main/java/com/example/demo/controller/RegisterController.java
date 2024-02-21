@@ -18,14 +18,15 @@ public class RegisterController {
     @Autowired
     private RegisterRepository r;
     @PostMapping("/")
-    public String createUser(@RequestParam String user_name,@RequestParam String password,@RequestParam String cpassword){
+    public String createUser(@RequestParam String username,@RequestParam String password,@RequestParam String cpassword){
         Credentials c=new Credentials();
-        c.setUser_name(user_name);
+        c.setUsername(username);
         c.setPassword(password);
         c.setCpassword(cpassword);
         if(c.getPassword().equals(c.getCpassword())){
             r.save(c);
+            return "index";
         }
-        return "index";
+        return "register";
     }
 }

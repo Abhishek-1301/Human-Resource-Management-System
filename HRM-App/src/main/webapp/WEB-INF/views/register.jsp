@@ -17,7 +17,7 @@
                 <div class="col-md-4">
                     <form action="/" method="post">
                         <label for="username"><b>Username<span>*</span>:</b></label>
-                        <input class="form-control" type="text" id="username" name="user_name" required>
+                        <input class="form-control" type="text" id="username" name="username" required>
                         <label for="password"><b>Password<span>*</span>:</b></label>
                         <input class="form-control" type="password" id="password" name="password" required>
                         <label for="cpassword" id="cpassword"><b>Confirm Password<span>*</span>:</b></label>
