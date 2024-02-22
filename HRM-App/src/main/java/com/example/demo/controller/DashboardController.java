@@ -63,7 +63,7 @@ public class DashboardController {
     public String selection() {
         return "selection";
     }
-    @GetMapping("/dashboard/registee-employee")
+    @GetMapping("/dashboard/register-employee")
     public String register() {
         return "registerEmployee";
     }
