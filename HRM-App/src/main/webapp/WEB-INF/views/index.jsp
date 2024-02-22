@@ -25,6 +25,11 @@
                     </div>
                     <p>Don't have an account? <a href="/register" title="Click to Register">Register</a></p>
                 </div>
+                <% if (request.getAttribute("errorMessage") != null) { %>
+                    <div class="alert alert-danger" role="alert">
+                        <%= request.getAttribute("errorMessage") %>
+                    </div>
+                <% } %>
             </div>
         </div>
     </body>

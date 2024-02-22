@@ -27,6 +27,21 @@
                 </div>
                 <p>Already have an account! <a href="/" title="Click to Login">Login</a></p>
             </div>
+            <% if (request.getAttribute("error1") != null) { %>
+                <div class="alert alert-danger" role="alert">
+                    <%= request.getAttribute("error1") %>
+                </div>
+            <% } %>
+            <% if (request.getAttribute("error2") != null) { %>
+                <div class="alert alert-danger" role="alert">
+                    <%= request.getAttribute("error2") %>
+                </div>
+            <% } %>
+            <% if (request.getAttribute("success") != null) { %>
+                <div class="alert alert-danger" role="alert">
+                    <%= request.getAttribute("success") %>
+                </div>
+            <% } %>
         </div>
         </div>
     </body>

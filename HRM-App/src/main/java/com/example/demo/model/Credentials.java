@@ -14,6 +14,16 @@ public class Credentials {
     @Transient
     private String cpassword;
 
+    @Override
+    public String toString() {
+        return "Credentials{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", cpassword='" + cpassword + '\'' +
+                '}';
+    }
+
     public String getPassword() {
         return password;
     }
