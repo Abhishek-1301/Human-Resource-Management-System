@@ -26,16 +26,14 @@ public class RegisterController {
         c.setCpassword(cpassword);
         if (repo.findByUsername(username)!=null){
             redirectAttributes.addFlashAttribute("error1","Username already exist");
-            return "redirect:/register";
         }
         else if(c.getPassword().equals(c.getCpassword())){
             repo.save(c);
             redirectAttributes.addFlashAttribute("success","User added successfully");
-            return "redirect:/";
         }
         else{
             redirectAttributes.addFlashAttribute("error2","Passwords do not match");
-            return "redirect:/register";
         }
+        return "redirect:/register";
     }
 }
