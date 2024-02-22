@@ -30,7 +30,7 @@
             <h2>Candidate Screening</h2>
             <form action="/recruitment" method="get">
               <label for="job-title">Job Title<span>*</span>:</label>
-              <input type="text" id="job-title" name="job-title" required>
+              <input type="text" id="job-title" name="job_title" required>
               <label for="skills">Skills<span>*</span>:</label>
               <input type="text" id="skills" name="skills" required>
               <label for="education">Education<span>*</span>:</label>

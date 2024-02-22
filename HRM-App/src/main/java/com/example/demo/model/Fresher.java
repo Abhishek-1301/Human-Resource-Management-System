@@ -1,10 +1,6 @@
 package com.example.demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name="fresher")
@@ -13,7 +9,8 @@ public class Fresher {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
+	@Column(name = "cname")
+	private String name;
     private String jobTitle;
     private String skills;
     private String education;
@@ -21,11 +18,19 @@ public class Fresher {
 	public int getId() {
 		return id;
 	}
+
 	@Override
 	public String toString() {
-		return "Fresher [id=" + id + ", jobTitle=" + jobTitle + ", skills=" + skills + ", education=" + education
-				+ ", experience=" + experience + "]";
+		return "Fresher{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", jobTitle='" + jobTitle + '\'' +
+				", skills='" + skills + '\'' +
+				", education='" + education + '\'' +
+				", experience=" + experience +
+				'}';
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -55,4 +60,11 @@ public class Fresher {
 	}
 
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 }
