@@ -39,10 +39,6 @@ public class DashboardController {
     public String attendance() {
         return "attendance";
     }
-    @GetMapping("/dashboard/recruitment")
-    public String recruitment() {
-        return "recruitment";
-    }
     @GetMapping("/dashboard/feedback")
     public String feedback() {
         return "feedback";

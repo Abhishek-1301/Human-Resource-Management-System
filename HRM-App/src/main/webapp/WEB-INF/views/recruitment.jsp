@@ -28,7 +28,7 @@
         </table>
           <div id="candidateScreeningSection" class="section" style="display:none;">
             <h2>Candidate Screening</h2>
-            <form>
+            <form action="/recruitment" method="get">
               <label for="job-title">Job Title<span>*</span>:</label>
               <input type="text" id="job-title" name="job-title" required>
               <label for="skills">Skills<span>*</span>:</label>
@@ -59,7 +59,7 @@
           </div>
           <div id="communicationToolsSection" class="section" style="display:none;">
             <h2>Communicate Candidate</h2>
-                <form>
+                <form >
                 <label for="candidate-email">Candidate Email<span>*</span>:</label>
                 <input type="email" id="candidate-email" name="candidate-email" required>
                 <label for="message">Message<span>*</span>:</label>
