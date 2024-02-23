@@ -26,7 +26,7 @@
               </tr>
             </thead>
         </table>
-          <div id="candidateScreeningSection" class="section" style="display:none;">
+          <div id="candidateScreeningSection" class="section">
             <h2>Candidate Screening</h2>
             <form action="/recruitment" method="get">
               <label for="job-title">Job Title<span>*</span>:</label>
@@ -39,6 +39,11 @@
               <input type="number" id="experience" name="experience" required>
               <button type="submit">Search</button>
             </form>
+            <% if (request.getAttribute("msg") != null) { %>
+                <div class="alert alert-success" role="alert">
+                    <%= request.getAttribute("msg") %>
+                </div>
+            <% } %>
           </div>
           <div id="interviewSchedulingSection" class="section" style="display:none;">
             <h2>Interview Scheduling</h2>
@@ -74,15 +79,16 @@
             const interviewSchedulingSection = document.getElementById('interviewSchedulingSection');
             const communicationToolsSection = document.getElementById('communicationToolsSection');
 
-            if (sectionId === 'candidate screening') {
-              candidateScreeningSection.style.display = 'block';
-              interviewSchedulingSection.style.display = 'none';
-              communicationToolsSection.style.display = 'none';
-            } else if (sectionId === 'interview scheduling') {
+            if (sectionId === 'interview scheduling') {
               candidateScreeningSection.style.display = 'none';
               interviewSchedulingSection.style.display = 'block';
               communicationToolsSection.style.display = 'none';
-            } else if (sectionId === 'communication tools') {
+            }else if (sectionId === 'candidate screening') {
+               candidateScreeningSection.style.display = 'block';
+               interviewSchedulingSection.style.display = 'none';
+               communicationToolsSection.style.display = 'none';
+             }
+             else if (sectionId === 'communication tools') {
               candidateScreeningSection.style.display = 'none';
               interviewSchedulingSection.style.display = 'none';
               communicationToolsSection.style.display = 'block';
@@ -94,9 +100,8 @@
             header.addEventListener('click', () => {
               headers.forEach(h => h.classList.remove('active'));
               header.classList.add('active');
-
               if (index === 0) {
-                toggleSection('candidate screening');
+                  toggleSection('candidate screening');
               } else if (index === 1) {
                 toggleSection('interview scheduling');
               } else if (index === 2) {

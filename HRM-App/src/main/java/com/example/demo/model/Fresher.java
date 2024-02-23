@@ -4,13 +4,13 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name="fresher")
-
 public class Fresher {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 	@Column(name = "cname")
 	private String name;
+	@Column(name = "job_title")
     private String jobTitle;
     private String skills;
     private String education;
