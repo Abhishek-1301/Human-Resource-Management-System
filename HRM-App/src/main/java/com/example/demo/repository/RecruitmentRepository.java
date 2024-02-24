@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface RecruitmentRepository extends JpaRepository<Fresher,Integer> {
     @Query(value = "SELECT * FROM fresher f WHERE f.job_title LIKE %:jobTitle% AND f.skills LIKE %:skills% AND f.education LIKE %:education% AND f.experience = :experience", nativeQuery = true)
-    List<Fresher> candidateScreening(@Param("jobTitle") String jobTitle, @Param("skills") String skills,@Param("education") String education, @Param("experience") int experience);
+    List<Fresher> queryAll(@Param("jobTitle") String jobTitle, @Param("skills") String skills,@Param("education") String education, @Param("experience") int experience);
 }

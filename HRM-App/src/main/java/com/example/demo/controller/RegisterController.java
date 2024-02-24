@@ -5,6 +5,7 @@ import com.example.demo.repository.RegisterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -19,16 +20,12 @@ public class RegisterController {
     @Autowired
     private RegisterRepository repo;
     @PostMapping("/")
-    public String createUser(@RequestParam String username, @RequestParam String password, @RequestParam String cpassword, RedirectAttributes redirectAttributes){
-        Credentials c=new Credentials();
-        c.setUsername(username);
-        c.setPassword(password);
-        c.setCpassword(cpassword);
-        if (repo.findByUsername(username)!=null){
+    public String createUser(@ModelAttribute Credentials credentials, RedirectAttributes redirectAttributes){
+        if (repo.findByUsername(credentials.getUsername())!=null){
             redirectAttributes.addFlashAttribute("error1","Username already exist");
         }
-        else if(c.getPassword().equals(c.getCpassword())){
-            repo.save(c);
+        else if(credentials.getPassword().equals(credentials.getCpassword())){
+            repo.save(credentials);
             redirectAttributes.addFlashAttribute("success","User added successfully");
         }
         else{

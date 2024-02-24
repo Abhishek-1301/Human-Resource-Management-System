@@ -187,3 +187,7 @@ button[type="submit"]:hover {
 span{
   color: red;
 }
+#cs{
+  background-color: white;
+  color:black;
+}

@@ -1,58 +1,136 @@
-.register{
-    position: relative;
-    left: 265px;
+body{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas:
+    "side header"
+    "side main";
 }
-input[type="text"],input[type="email"]{
-    width: 50%;
-	padding:5px;
-    margin-top: 20px;
-    border-radius: 50px;
-    border: 1px solid #ccc;
+
+.header{
+    grid-area: header;
 }
-input[type="date"]{
-    width: 30%;
-	padding:5px;
-    margin-top: 10px;
-    border-radius: 50px;
-    border: 1px solid #ccc;
+
+.sidebar{
+    background-color: #e9f0f2;
+    grid-area: side;
+    display: grid;
+    grid-template-rows: 100px 500px;
+    grid-template-areas:
+    "r1"
+    "r2"
+    "r3"
+    "r4";
 }
-input[type="submit"]{
-    background-color: #4CAF50;
-    color: white;
-    padding: 5px 20px;
-	border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    margin-left: 20px;
-    margin-top: 20px;
+.card2{
+    align-items: center;
+    justify-content: center;
 }
-h2{
-    text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: 10px;
-    text-align: center;
-    font-weight: bold;
-    background-color: #51aec3;
-    border-radius: 5px;
-    padding: 5px;
-    width: 50%;
-    box-sizing: border-box;
+.main{
+    grid-area: main;
+}
+a{
+    color: #000 !important;
+    text-decoration: none !important;
+    background-color: none !important;
+}
+h3{
+    padding: 10px;
+    padding-left: 50px;
+    padding-top: 20px;
+}
+ul{
+    list-style-type: none;
+}
+li{
+    font-size: 15px;
+}
+img{
+    width:150px;
+    padding: 10px;
+    mix-blend-mode: color-burn;
 }
 span{
     color: red;
 }
 form {
     font-family: Arial, sans-serif;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 50%;
-    box-sizing: border-box;
-    text-align: center;
+    padding: 10px;
 }
 label {
     display: block;
-    margin-bottom: 20px;
     font-weight: bold;
+}
+.reg{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "left right";
+}
+.left-column {
+    background-color: #f9f9f9;
+    grid-area: left;
+    border-radius: 10px;
+}
+.right-column {
+    background-color: #f0f0f0;
+    grid-area: right;
+    border-radius: 10px;
+}
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    box-sizing: border-box;
+}
+input[type="date"],select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    box-sizing: border-box;
+}
+input[type="number"],input[type="email"]{
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    box-sizing: border-box;
+}
+#mobileNumber{
+    width: 50%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    box-sizing: border-box;
+}
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 8px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 25%;
+    position: relative;
+    left: 200px;
+    bottom: 20px;
+}
+.first{
+    padding-left: 80px;
+}
+.second{
+    padding-left: 40px;
+}
+.alert{
+    width: 25%;
+    height: 50px;
+    position: relative;
+    bottom: 10px;
+    left: 900px;
 }
