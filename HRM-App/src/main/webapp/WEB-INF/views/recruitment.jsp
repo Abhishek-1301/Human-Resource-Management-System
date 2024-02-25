@@ -40,10 +40,14 @@
               <input type="text" id="education" name="education" required>
               <label for="experience">Experience<span>*</span>:</label>
               <input type="number" id="experience" name="experience" required>
-              <button type="submit">Search</button>
-            </form><br><br>
-            <%  List<Fresher> dataList = (List<Fresher>)request.getAttribute("dataList");
-             if (dataList != null) { %>
+              <button type="submit">Search</button><br><br>
+              <%  List<Fresher> dataList = (List<Fresher>)request.getAttribute("dataList");
+                  String job_title = request.getParameter("job_title");
+                  String skills = request.getParameter("skills");
+                  String education = request.getParameter("education");
+                  String experience = request.getParameter("experience");
+              boolean formSubmitted = job_title != null && skills != null && education != null && experience != null;
+               if (formSubmitted && dataList != null && !dataList.isEmpty()) { %>
                  <div class="filter">
                     <table>
                         <thead>
@@ -68,11 +72,12 @@
                         </tbody>
                     </table>
                  </div>
-             <% } else { %>
+               <% } else if (formSubmitted) { %>
                  <div class="alert alert-danger" role="alert">
                      <p>No candidates matched <i class="fa fa-times-circle" style="font-size:20px;color:red"></i></p>
                  </div>
-             <% } %>
+               <% } %>
+            </form>
           </div>
           <div id="interviewSchedulingSection" class="section" style="display:none;">
             <h2>Interview Scheduling</h2>
