@@ -1,4 +1,4 @@
-input[type="text"]{
+input[type="number"]{
     width: 50%;
 	padding:5px;
     margin-bottom: 10px;
@@ -19,4 +19,10 @@ input[type="submit"]{
     padding: 250px;
     position: relative;
     left: 220px;
+}
+.alert{
+    width:50%;
+    height:50px;
+    position:relative;
+    left:130px;
 }

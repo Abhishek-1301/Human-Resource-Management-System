@@ -2,6 +2,8 @@ package com.example.demo.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "employee")
 public class Employee {
@@ -26,6 +28,8 @@ public class Employee {
     private String designation;
     private int salary;
     private String course;
+    @OneToMany(mappedBy = "employee")
+    private List<Score> scores;
 
     public int getEmpId() {
         return empId;

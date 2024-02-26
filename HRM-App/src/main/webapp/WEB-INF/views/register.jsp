@@ -32,13 +32,11 @@
                 <div class="alert alert-danger" role="alert">
                     <%= request.getAttribute("error1") %> <i class="fa fa-times-circle" style="font-size:20px;color:red"></i>
                 </div>
-            <% } %>
-            <% if (request.getAttribute("error2") != null) { %>
+            <% } if (request.getAttribute("error2") != null) { %>
                 <div class="alert alert-danger" role="alert">
                     <%= request.getAttribute("error2") %> <i class="fa fa-times-circle" style="font-size:20px;color:red"></i>
                 </div>
-            <% } %>
-            <% if (request.getAttribute("success") != null) { %>
+            <% } if (request.getAttribute("success") != null) { %>
                 <div class="alert alert-success" role="alert">
                     <%= request.getAttribute("success") %> <i class="fa fa-check-circle" style="font-size:20px;color:green"></i>
                 </div>
