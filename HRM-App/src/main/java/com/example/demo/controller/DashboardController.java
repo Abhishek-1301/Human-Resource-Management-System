@@ -35,21 +35,9 @@ public class DashboardController {
             return "redirect:/";
         }
     }
-    @GetMapping("/dashboard/attendance")
-    public String attendance() {
-        return "attendance";
-    }
     @GetMapping("/dashboard/feedback")
     public String feedback() {
         return "feedback";
-    }
-    @GetMapping("/dashboard/performance")
-    public String performance() {
-        return "performance";
-    }
-    @GetMapping("/dashboard/trainingndevelopment")
-    public String trainndevelop() {
-        return "trainndevelop";
     }
     @GetMapping("/dashboard/selection")
     public String selection() {

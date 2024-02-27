@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 @Repository
 public interface SalaryRepository extends JpaRepository<Salary,Integer> {
-    @Query(value = "select * from salary s join employee e " +
-            "on s.job_role=e.designation where e.emp_id=?1",nativeQuery = true)
-    Salary getSal(int empId);
+    @Query(value = "select * from salary s where s.emp_id=?1 and s.sal_month=?2 and s.sal_year=?3",nativeQuery = true)
+    Salary getSal(int empId,String month,int year);
 }

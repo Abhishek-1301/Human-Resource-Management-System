@@ -33,7 +33,7 @@ public class PayRollsController {
             Month m = Month.valueOf(month.toUpperCase());
             int monthNumber = m.getValue();
             if (year < presentYear || (year <= presentYear && monthNumber < presentMonth)) {
-                Salary salary = salaryRepository.getSal(empId);
+                Salary salary = salaryRepository.getSal(empId,month,year);
                 model.addAttribute("salary", salary);
                 model.addAttribute("empId", empId);
                 model.addAttribute("month", month);

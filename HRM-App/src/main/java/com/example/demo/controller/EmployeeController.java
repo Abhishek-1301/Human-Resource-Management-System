@@ -26,29 +26,4 @@ public class EmployeeController {
         redirectAttributes.addFlashAttribute("msg","Employee Registered Successfully");
         return "redirect:/dashboard/registeremployee";
     }
-    @PostMapping("/trainndevelop")
-    public void assign(@RequestParam int empId, @RequestParam String course, Model model){
-        if(employeeRepository.check(empId)==0){
-            model.addAttribute("msg","Employee not found");
-        }
-        else {
-            Employee employee=employeeRepository.getByEmpId(empId);
-            employee.setCourse(course);
-            employeeRepository.save(employee);
-            model.addAttribute("success","Course assigned successfully");
-        }
-    }
-    @Autowired
-    private ScoreRepository scoreRepository;
-    @GetMapping("/performance")
-    public void report(@RequestParam int empId,Model model){
-        if(employeeRepository.check(empId)==0){
-            model.addAttribute("msg","Employee not found");
-        }
-        else {
-            List<Score> dataList=scoreRepository.getScores(empId);
-            model.addAttribute("empId",empId);
-            model.addAttribute("dataList",dataList);
-        }
-    }
 }

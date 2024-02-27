@@ -30,6 +30,10 @@ public class Employee {
     private String course;
     @OneToMany(mappedBy = "employee")
     private List<Score> scores;
+    @OneToMany(mappedBy = "employee")
+    private List<Attendance> attendances;
+    @OneToMany(mappedBy = "employee")
+    private List<Salary> salaries;
 
     public int getEmpId() {
         return empId;

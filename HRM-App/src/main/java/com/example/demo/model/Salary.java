@@ -16,6 +16,14 @@ public class Salary {
     private int bonus;
     private int allowances;
     private int deductions;
+    @Column(name = "sal_month")
+    private String month;
+    @Column(name = "sal_year")
+    private int year;
+    @ManyToOne
+    @JoinColumn(name = "emp_id",nullable = false)
+    private Employee employee;
+
     @Transient
     private int netSalary;
 
@@ -76,5 +84,21 @@ public class Salary {
 
     public void setJobRole(String jobRole) {
         this.jobRole = jobRole;
+    }
+
+    public String getMonth() {
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 }
