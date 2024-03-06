@@ -1,13 +1,12 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Credentials;
-import com.example.demo.repository.RegisterRepository;
+import com.example.demo.repository.CredentialsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -18,7 +17,7 @@ public class RegisterController {
         return "register";
     }
     @Autowired
-    private RegisterRepository repo;
+    private CredentialsRepository repo;
     @PostMapping("/")
     public String createUser(@ModelAttribute Credentials credentials, RedirectAttributes redirectAttributes){
         if (repo.findByUsername(credentials.getUsername())!=null){

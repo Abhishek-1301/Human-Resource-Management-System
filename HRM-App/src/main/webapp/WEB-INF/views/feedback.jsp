@@ -24,7 +24,7 @@
                 <form>
                         <div class="entire_form">
                             <label>Employee id<span>*</span>:</label>
-                            <input type="text" required><br>
+                            <input type="Emp Id" required><br>
                             <div>
                                 <label id="msg">Message<span>*</span>:</label>
                                 <textarea></textarea>

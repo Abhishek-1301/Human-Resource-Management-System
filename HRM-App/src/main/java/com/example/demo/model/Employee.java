@@ -11,6 +11,7 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "emp_id")
     private int empId;
+    private String password;
     @Column(name = "first_name")
     private String firstName;
     @Column(name = "middle_name")
@@ -152,6 +153,7 @@ public class Employee {
     public String toString() {
         return "Employee{" +
                 "empId=" + empId +
+                ", password='" + password + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", middleName='" + middleName + '\'' +
                 ", lastName='" + lastName + '\'' +
@@ -165,6 +167,17 @@ public class Employee {
                 ", designation='" + designation + '\'' +
                 ", salary=" + salary +
                 ", course='" + course + '\'' +
+                ", scores=" + scores +
+                ", attendances=" + attendances +
+                ", salaries=" + salaries +
                 '}';
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

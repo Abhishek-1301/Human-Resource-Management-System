@@ -28,7 +28,7 @@
                 <form action="/performance" method="get">
                         <div class="entire_form">
                             <label>Employee id<span>*</span>:</label>
-                            <input type="number" name="empId" required><br>
+                            <input type="Emp Id" name="empId" required><br>
                             <input id="submitBtn" type="submit" value="Get Report">
    			                <canvas id="examScoresChart" width="10%" height="10%"></canvas>
                         </div><br>

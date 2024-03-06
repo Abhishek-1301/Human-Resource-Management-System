@@ -26,7 +26,7 @@
                 <form action="/payrolls" method="get">
                         <div class="entire_form">
                             <label>Employee id<span>*</span>:</label>
-                            <input type="number" id=empId name="empId" required><br>
+                            <input type="Emp Id" name="empId" required><br>
                             <div id="month">
                                 <label>Month<span>*</span>:</label>
                                 <select required name="month">

@@ -25,7 +25,7 @@
                 <form action="/trainndevelop" method="post">
                         <div class="entire_form">
                             <label>Employee id<span>*</span>:</label>
-                            <input type="text" name="empId" required><br>
+                            <input type="Emp Id" name="empId" required><br>
                             <div id="month">
                                 <label>Select Course<span>*</span>:</label>
                                 <select name="course" required>

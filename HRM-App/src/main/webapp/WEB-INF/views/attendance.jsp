@@ -47,7 +47,7 @@
             <form id="myForm" action="/attendance" method="get">
                     <div class="entire_form">
                         <label>Employee id<span>*</span>:</label>
-                        <input type="number" name="empId" required><br>
+                        <input type="Emp Id" name="empId" required><br>
                         <div id="att_type">
                             <label>Attendance type<span>*</span>:</label>
                             <select id='attendance_type' name="type" onchange="getattendance()" required>
