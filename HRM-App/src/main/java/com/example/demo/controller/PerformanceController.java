@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.model.Score;
 import com.example.demo.repository.EmployeeRepository;
 import com.example.demo.repository.ScoreRepository;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,7 +23,10 @@ public class PerformanceController {
     @Autowired
     private EmployeeRepository employeeRepository;
     @GetMapping("/performance")
-    public void report(@RequestParam int empId, Model model){
+    public void report(@RequestParam(required = false) Integer empId, Model model, HttpSession httpSession){
+        if(empId==null){
+            empId=(int)httpSession.getAttribute("empId");
+        }
         if(employeeRepository.check(empId)==0){
             model.addAttribute("msg","Employee not found");
         }

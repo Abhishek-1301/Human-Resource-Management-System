@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.model.Salary;
 import com.example.demo.repository.EmployeeRepository;
 import com.example.demo.repository.SalaryRepository;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +24,10 @@ public class PayRollsController {
     @Autowired
     private EmployeeRepository employeeRepository;
     @GetMapping("/payrolls")
-    public void getSalary(@RequestParam int empId,@RequestParam String month,@RequestParam int year,Model model){
+    public void getSalary(@RequestParam(required = false) Integer empId, @RequestParam String month, @RequestParam int year, Model model, HttpSession httpSession){
+        if(empId==null){
+            empId=(int)httpSession.getAttribute("empId");
+        }
         if(employeeRepository.check(empId)==0){
             model.addAttribute("msg","Employee id not found");
         } else {

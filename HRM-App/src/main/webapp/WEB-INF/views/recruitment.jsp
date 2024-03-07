@@ -23,23 +23,22 @@
         <table>
             <thead>
               <tr>
-                <th>Candidate Screening</th>
-                <th>Interview Scheduling</th>
+                <th id="cand">Candidate Screening</th>
+                <th id="int">Interview Scheduling</th>
               </tr>
             </thead>
         </table>
           <div id="candidateScreeningSection" class="section">
-            <h2>Candidate Screening</h2>
-            <form action="/recruitment" method="get">
-              <label for="job-title">Job Title<span>*</span>:</label>
-              <input type="text" id="job-title" name="job_title" required>
-              <label for="skills">Skills<span>*</span>:</label>
-              <input type="text" id="skills" name="skills" required>
-              <label for="education">Education<span>*</span>:</label>
-              <input type="text" id="education" name="education" required>
-              <label for="experience">Experience<span>*</span>:</label>
-              <input type="number" id="experience" name="experience" required>
-              <button type="submit">Search</button><br><br>
+              <form action="/recruitment" method="get">
+                <label for="job-title">Job Title<span>*</span>:</label>
+                <input type="text" id="job-title" name="job_title" required>
+                <label for="skills">Skills<span>*</span>:</label>
+                <input type="text" id="skills" name="skills" required>
+                <label for="education">Education<span>*</span>:</label>
+                <input type="text" id="education" name="education" required>
+                <label for="experience">Experience<span>*</span>:</label>
+                <input type="number" id="experience" name="experience" required>
+                <input type="submit" value="Search"><br><br>
               <%  List<Fresher> dataList = (List<Fresher>)request.getAttribute("dataList");
                   String job_title = request.getParameter("job_title");
                   String skills = request.getParameter("skills");
@@ -79,35 +78,37 @@
             </form>
           </div>
           <div id="interviewSchedulingSection" class="section" style="display:none;">
-            <h2>Interview Scheduling</h2>
-            <form action="/schedule" method="post">
-              <label for="candidate">Candidate<span>*</span>:</label><br>
-              <input  type="text"  id="candidatesize" name="candidate" placeholder="Enter text here" required><br>
-              <label for="candidate">Candidate Email<span>*</span>:</label><br>
-              <input  type="text"  id="candidatesize" name="candidateEmail" placeholder="Enter text here" required><br>
-              <label for="interviewer">Interviewer<span>*</span>:</label><br>
-
-              <input type="text" id="interviewersize" name="interviewer" placeholder="Enter text here" required><br>
-
-              <label for="date">Date<span>*</span>:</label>
-              <input type="date" id="date" name="scheduleDate" required>
-              <label for="time">Time<span>*</span>:</label>
-              <input type="time" id="time" name="scheduleTime" required>
-              <button type="submit">Schedule Interview</button>
-            </form>
-          </div>
+              <form action="/schedule" method="post">
+                <label for="candidate">Candidate<span>*</span>:</label><br>
+                <input  type="text"  id="candidatesize" name="candidate" required><br>
+                <label for="candidate">Candidate Email<span>*</span>:</label><br>
+                <input  type="text"  id="candidatesize" name="candidateEmail" required><br>
+                <label for="interviewer">Interviewer<span>*</span>:</label><br>
+                <input type="text" id="interviewersize" name="interviewer" required><br>
+                <label for="date">Date<span>*</span>:</label>
+                <input type="date" id="date" name="scheduleDate" required>
+                <label for="time">Time<span>*</span>:</label>
+                <input type="time" id="time" name="scheduleTime" required><br><br>
+                <input type="submit" id="si" value="Schedule Interview">
+              </form>
+            </div>
     </main>
     <script>
         function toggleSection(sectionId) {
             const candidateScreeningSection = document.getElementById('candidateScreeningSection');
             const interviewSchedulingSection = document.getElementById('interviewSchedulingSection');
-
+            const cand=document.getElementById('cand');
+            const int=document.getElementById('int');
             if (sectionId === 'interview scheduling') {
               candidateScreeningSection.style.display = 'none';
               interviewSchedulingSection.style.display = 'block';
+              cand.style.backgroundColor='rgb(94, 173, 204)';
+              int.style.backgroundColor='skyblue';
             }else if (sectionId === 'candidate screening') {
                candidateScreeningSection.style.display = 'block';
                interviewSchedulingSection.style.display = 'none';
+               cand.style.backgroundColor='skyblue';
+               int.style.backgroundColor='rgb(94, 173, 204)';
              }
           }
 

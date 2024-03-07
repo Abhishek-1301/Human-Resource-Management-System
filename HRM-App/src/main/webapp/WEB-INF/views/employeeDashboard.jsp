@@ -13,7 +13,7 @@
           <img src="/images/hrmlogo.png">
       </div>
       <div class="card2">
-          <jsp:include page="/WEB-INF/views/sidebar.jsp" />
+          <jsp:include page="/WEB-INF/views/employeeSidebar.jsp" />
       </div>
   </section>
   <div class="headnbody">

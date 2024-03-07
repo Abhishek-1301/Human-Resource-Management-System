@@ -16,7 +16,11 @@
             <img src="/images/hrmlogo.png">
         </div>
         <div class="card2">
-            <jsp:include page="/WEB-INF/views/sidebar.jsp" />
+            <% if ("hr".equals(session.getAttribute("role"))) { %>
+                <jsp:include page="/WEB-INF/views/sidebar.jsp" />
+            <% } else { %>
+                <jsp:include page="/WEB-INF/views/employeeSidebar.jsp" />
+            <% } %>
         </div>
     </section>
     <div class="headnbody">
@@ -25,8 +29,10 @@
                 <h2>Employee Payroll</h2>
                 <form action="/payrolls" method="get">
                         <div class="entire_form">
-                            <label>Employee id<span>*</span>:</label>
-                            <input type="Emp Id" name="empId" required><br>
+                            <% if ("hr".equals(session.getAttribute("role"))) { %>
+                                <label>Employee id<span>*</span>:</label>
+                                <input type="Emp Id" name="empId"><br>
+                            <% } %>
                             <div id="month">
                                 <label>Month<span>*</span>:</label>
                                 <select required name="month">
@@ -52,7 +58,13 @@
                             <input type="submit">
                         </div>
                 <%  Object obj = request.getAttribute("salary");
-                        boolean formSubmitted=request.getParameter("empId")!=null && request.getParameter("month")!=null && request.getParameter("year")!=null;
+                        boolean formSubmitted;
+                        if ("hr".equals(session.getAttribute("role"))){
+                            formSubmitted=request.getParameter("empId")!=null && request.getParameter("month")!=null && request.getParameter("year")!=null;
+                        }
+                        else {
+                            formSubmitted=request.getParameter("month")!=null && request.getParameter("year")!=null;
+                        }
                         if (formSubmitted && obj instanceof Salary) {
                             Salary s = (Salary) obj;  %>
                        <br>

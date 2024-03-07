@@ -16,6 +16,10 @@ public class TrainNDevelopController {
     public String trainndevelop() {
         return "trainndevelop";
     }
+    @GetMapping("/dashboard/training")
+    public String training() {
+        return "training";
+    }
     @Autowired
     private EmployeeRepository employeeRepository;
     @PostMapping("/trainndevelop")

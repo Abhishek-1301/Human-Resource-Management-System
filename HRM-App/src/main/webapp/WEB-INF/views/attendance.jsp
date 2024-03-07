@@ -36,7 +36,11 @@
             <img src="/images/hrmlogo.png">
         </div>
         <div class="card2">
-            <jsp:include page="/WEB-INF/views/sidebar.jsp" />
+            <% if ("hr".equals(session.getAttribute("role"))) { %>
+                <jsp:include page="/WEB-INF/views/sidebar.jsp" />
+            <% } else { %>
+                <jsp:include page="/WEB-INF/views/employeeSidebar.jsp" />
+            <% } %>
         </div>
     </section>
     <header class="header">
@@ -46,8 +50,10 @@
             <h2>Employee Attendance</h2>
             <form id="myForm" action="/attendance" method="get">
                     <div class="entire_form">
-                        <label>Employee id<span>*</span>:</label>
-                        <input type="Emp Id" name="empId" required><br>
+                        <% if ("hr".equals(session.getAttribute("role"))) { %>
+                            <label>Employee id<span>*</span>:</label>
+                            <input type="Emp Id" name="empId"><br>
+                        <% } %>
                         <div id="att_type">
                             <label>Attendance type<span>*</span>:</label>
                             <select id='attendance_type' name="type" onchange="getattendance()" required>

@@ -18,7 +18,11 @@
             <img src="/images/hrmlogo.png">
         </div>
         <div class="card2">
-            <jsp:include page="/WEB-INF/views/sidebar.jsp" />
+            <% if ("hr".equals(session.getAttribute("role"))) { %>
+                <jsp:include page="/WEB-INF/views/sidebar.jsp" />
+            <% } else { %>
+                <jsp:include page="/WEB-INF/views/employeeSidebar.jsp" />
+            <% } %>
         </div>
     </section>
     <div class="headnbody">
@@ -27,8 +31,10 @@
                 <h2>Performance</h2>
                 <form action="/performance" method="get">
                         <div class="entire_form">
-                            <label>Employee id<span>*</span>:</label>
-                            <input type="Emp Id" name="empId" required><br>
+                            <% if ("hr".equals(session.getAttribute("role"))) { %>
+                                <label>Employee id<span>*</span>:</label>
+                                <input type="Emp Id" name="empId"><br>
+                            <% } %>
                             <input id="submitBtn" type="submit" value="Get Report">
    			                <canvas id="examScoresChart" width="10%" height="10%"></canvas>
                         </div><br>
@@ -45,7 +51,10 @@
             let marks = [];
             <% List<Score> dataList = (List<Score>)request.getAttribute("dataList");
                String empId = request.getParameter("empId");
-               boolean formSubmitted = empId != null;
+               boolean formSubmitted=true;
+               if ("hr".equals(session.getAttribute("role"))){
+                formSubmitted = empId != null;
+               }
                if (formSubmitted && dataList != null && !dataList.isEmpty()) {
                    for (Score s : dataList) { %>
                        marks.push(<%= s.getScore() %>);

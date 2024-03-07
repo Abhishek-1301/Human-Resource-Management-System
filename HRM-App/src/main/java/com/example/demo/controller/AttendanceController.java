@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 import com.example.demo.repository.AttendanceRepository;
 import com.example.demo.repository.EmployeeRepository;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,11 +21,14 @@ public class AttendanceController {
     @Autowired
     private AttendanceRepository attendanceRepository;
     @GetMapping("/attendance")
-    public void attendance(@RequestParam int empId, @RequestParam(required = false) String date, @RequestParam(required = false) String date1,
-                           @RequestParam(required = false) String date2, @RequestParam String type, Model model){
+    public void attendance(@RequestParam(required = false) Integer empId, @RequestParam(required = false) String date, @RequestParam(required = false) String date1,
+                           @RequestParam(required = false) String date2, @RequestParam String type, Model model, HttpSession httpSession){
         LocalDate d = (date != null && !date.isEmpty()) ? LocalDate.parse(date) : LocalDate.ofEpochDay(0);
         LocalDate d1 = (date1 != null && !date1.isEmpty()) ? LocalDate.parse(date1) : LocalDate.ofEpochDay(0);
         LocalDate d2 = (date2 != null && !date2.isEmpty()) ? LocalDate.parse(date2) : LocalDate.ofEpochDay(0);
+        if(empId == null){
+            empId=(int)httpSession.getAttribute("empId");
+        }
         int percentage=0;
         if (employeeRepository.check(empId)==0){
             model.addAttribute("msg","Employee not found");
