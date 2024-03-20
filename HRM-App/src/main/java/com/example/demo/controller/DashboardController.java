@@ -13,9 +13,5 @@ public class DashboardController {
     public String employeeDashboard(){
         return "employeeDashboard";
     }
-    @GetMapping("/dashboard/feedback")
-    public String feedback() {
-        return "feedback";
-    }
 
 }

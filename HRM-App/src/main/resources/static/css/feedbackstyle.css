@@ -29,3 +29,10 @@ input[type="submit"]{
     position: relative;
     left: 250px;
 }
+.alert{
+    margin-top:10px;
+    width:50%;
+    height:50px;
+    position: relative;
+    left: 130px;
+}
