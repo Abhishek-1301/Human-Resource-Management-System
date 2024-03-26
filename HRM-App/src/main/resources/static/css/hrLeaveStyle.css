@@ -1,0 +1,89 @@
+table {
+    border-collapse: collapse;
+    width: 50%;
+    height: 50px;
+    text-align: center;
+    position: relative;
+    top: 20px;
+    left: 50px;
+  }
+
+  th, td {
+    border: 1px solid black;
+    padding: 15px;
+    text-align:center;
+  }
+
+  th {
+    border: none;
+    color:black;
+    cursor: pointer;
+  }
+  #app{
+    width: 50%;
+    background-color: skyblue;
+  }
+  #hist{
+    background-color: rgb(94, 173, 204);
+  }
+#historyForm,#leave-approval{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    left: 50px;
+    top:50px
+  }
+  input[type="Emp Id"]{
+    width: 30%;
+	padding:5px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+}
+  input[type="submit"]{
+    background-color:rgb(94, 173, 204) ;
+    color: white;
+    padding: 5px 20px;
+	border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+input[type="submit"]:hover{
+    background-color: #4CAF50;
+}
+#leave-approval{
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    width: 50%;
+    text-align: center;
+    background-color: #fff;
+}
+p{
+  text-align: left;
+  padding-left: 15px;
+}
+#accept,#decline{
+    background-color:rgb(94, 173, 204) ;
+    color: white;
+    padding: 5px 20px;
+	border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+#accept{
+  margin-left: 200px;
+  background-color: #4CAF50;
+  color: white !important;
+}
+#decline{
+  margin-left: 20px;
+  background-color: #eb5119;
+  color: white !important;
+}

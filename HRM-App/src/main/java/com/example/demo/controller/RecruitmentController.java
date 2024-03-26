@@ -30,9 +30,9 @@ public class RecruitmentController {
 	 }
 	 @Autowired
 	 private InterviewRepository interviewRepository;
-	 @PostMapping("/schedule")
-	public String schedule(@ModelAttribute Interview interview){
+	 @PostMapping("/recruitment")
+	 public void schedule(@ModelAttribute Interview interview,Model model){
 		 interviewRepository.save(interview);
-		 return "dashboard";
+		 model.addAttribute("msg","Interview Scheduled");
 	 }
 }

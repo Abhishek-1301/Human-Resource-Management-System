@@ -78,7 +78,7 @@
             </form>
           </div>
           <div id="interviewSchedulingSection" class="section" style="display:none;">
-              <form action="/schedule" method="post">
+              <form action="/recruitment" method="post">
                 <label for="candidate">Candidate<span>*</span>:</label><br>
                 <input  type="text"  id="candidatesize" name="candidate" required><br>
                 <label for="candidate">Candidate Email<span>*</span>:</label><br>
@@ -90,6 +90,11 @@
                 <label for="time">Time<span>*</span>:</label>
                 <input type="time" id="time" name="scheduleTime" required><br><br>
                 <input type="submit" id="si" value="Schedule Interview">
+                <% if (request.getAttribute("msg") != null) { %>
+                    <div class="alert alert-success" role="alert">
+                        <p><%= request.getAttribute("msg") %> <i class="fa fa-check-circle" style="font-size:20px;color:green"></i></p>
+                    </div>
+                <% } %>
               </form>
             </div>
     </main>

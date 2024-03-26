@@ -173,3 +173,9 @@ color:black;
   position: relative;
   left: 50px;
 }
+.alert{
+    text-align:center;
+    margin-top:15px;
+    position: relative;
+    left: 130px;
+}

@@ -35,6 +35,8 @@ public class Employee {
     private List<Attendance> attendances;
     @OneToMany(mappedBy = "employee")
     private List<Salary> salaries;
+    @OneToMany(mappedBy = "employee")
+    private List<Leave> leaves;
 
     public int getEmpId() {
         return empId;
